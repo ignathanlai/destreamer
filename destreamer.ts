@@ -6,8 +6,7 @@ import path from 'path';
 import { BrowserTests } from './BrowserTests';
 import yargs = require('yargs');
 
-// Type in your username here (the one you use to
-// login to Microsoft Stream).
+// ignatius.laiwira@student.uphcollege.ac.id.
 const args: string[] = process.argv.slice(2); // TODO: Remove this
 
 const argv = yargs.options({
@@ -56,7 +55,7 @@ async function rentVideoForLater(videoUrls: string[], username: string, outputDi
     console.log('Launching headless Chrome to perform the OpenID Connect dance...');
     const browser = await puppeteer.launch({
         // Switch to false if you need to login interactively
-        headless: false,
+        headless: true,
         args: ['--disable-dev-shm-usage']
     });
     const page = await browser.newPage();
